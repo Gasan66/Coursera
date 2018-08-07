@@ -1,8 +1,9 @@
-a = float(input())
-b = float(input())
-c = float(input())
+import math
+n = 3.4999999999999999
 
-p = (a + b + c) / 2
-S = (p * (p - a) * (p - b) * (p - c)) ** 0.5
+if 0 < n - math.floor(n) < 0.5:
+    rusRound = int(math.floor(n))
+else:
+    rusRound = int(math.floor(n)) + 1
 
-print(S)
+print(rusRound)

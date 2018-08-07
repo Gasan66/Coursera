@@ -1,15 +1,17 @@
-n = int(input())
-Seq = n
-i = 1
-save = 1
-while n != 0:
-    n = int(input())
-    if n == Seq:
-        i += 1
-    elif i > save:
-        save = i
-        i = 1
-    else:
-        i = 1
-    Seq = n
-print(save)
+def power(a, n):
+    n -= 1
+    if n > 0:
+        if n % 2 == 0:
+            a *= power(a * a, n / 2)
+        else:
+            a *= power(a, n)
+    return a
+
+
+x, y = float(input()), float(input())
+if y == 0:
+    print(1)
+elif y % 2 == 0:
+    print(power(x * x, y / 2))
+else:
+    print(power(x, y))
