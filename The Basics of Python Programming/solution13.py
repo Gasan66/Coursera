@@ -1,11 +1,6 @@
-myList = list(map(int, input().split()))
+from collections import namedtuple
 
-for i in myList:
-    if i > 0:
-        value = i
-        break
+participant = namedtuple('participant', ['surname',
+                                         'point'])
 
-for i in myList:
-    if value > i > 0:
-        value = i
-print(value)
+print(participant(*input().split()))
